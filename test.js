@@ -14,13 +14,18 @@ let users = [
 // }
 
 function groupById(arr) {
-	let ob = arr.reduce((acc, el, i) => {
-		let ob = {};
-		ob[acc.id] = "hello";
-		debugger;
-	});
+	let ob = {};
+	arr.reduce((acc, el, i) => {
+		ob[el.id] = el;
+	}, []);
 	return ob;
 }
-
+// Supposed Solution
+// function groupById(array) {
+//   return array.reduce((obj, value) => {
+//     obj[value.id] = value;
+//     return obj;
+//   }, {})
+// }
 let usersById = groupById(users);
 console.log(usersById);
